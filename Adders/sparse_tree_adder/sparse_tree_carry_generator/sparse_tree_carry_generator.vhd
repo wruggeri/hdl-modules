@@ -6,7 +6,7 @@ use ieee.numeric_std.all;
 entity sparse_tree_carry_generator is
 	generic(n_bit: integer := 32);
 	port(operand_1, operand_2: in std_logic_vector(n_bit - 1 downto 0);
-	   carry_in: in std_logic;
+		carry_in: in std_logic;
 		carry_out: out std_logic_vector(n_bit / 4 - 1 downto 0));
 end sparse_tree_carry_generator;
 
