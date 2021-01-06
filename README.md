@@ -1,5 +1,5 @@
-# VHDL-MODULES
-A collection of generic VHDL modules to be used in projects and design. The following modules are provided:
+# HDL-MODULES
+A collection of generic VHDL/Verilog modules to be used in projects and design. The following modules are provided:
 
   - ALUs/alu: a simple ALU able to perform addition, subtraction and the AND/OR/XOR/NAND/NOR/XNOR bitwise logical operations.
   - Adders/carry_select_adder: a simple carry select adder based on ripple-carry adders.
