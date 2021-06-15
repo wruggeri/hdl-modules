@@ -1,21 +1,21 @@
-`timescale 1ns / 1ps
+`begin_keywords "1800-2017"
 
-
-module pwm_generator(clock, enable, reset, load,
-    threshold, count, pwm);
-    parameter n_bit = 8;
-    input clock, enable, reset, load;
-    input [n_bit - 1:0] threshold;
-    output [n_bit - 1:0] count;
-    output pwm;
+module pwm_generator
+	#(parameter n_bit = 8)
+	(input clock, enable, reset, load, 
+	input [n_bit - 1:0] threshold, 
+	output [n_bit - 1:0] count, 
+	output pwm);
     
+	timeunit 1ns/1ps;
+	
     reg[n_bit - 1:0] threshold_register;
     reg[n_bit - 1:0] count_register;
     
     assign pwm = (count_register > threshold_register);
     assign count = count_register;
     
-    always@(posedge clock, posedge reset)
+    always_ff@(posedge clock, posedge reset)
     begin
         if (reset == 1)
         begin
@@ -31,3 +31,5 @@ module pwm_generator(clock, enable, reset, load,
         end
     end
 endmodule
+
+`end_keywords
